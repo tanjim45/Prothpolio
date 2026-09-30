@@ -1,135 +1,423 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>MD TANJIM MAHATAB BHUIYAN | Flutter Developer</title>
-<meta name="description" content="Portfolio of MD TANJIM MAHATAB BHUIYAN, a Flutter Developer specializing in Flutter, Dart, Firebase, REST API and mobile application development.">
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, viewport-fit=cover"
+    >
+
+    <title>
+        MD TANJIM MAHATAB BHUIYAN | Flutter Developer
+    </title>
+
+    <meta
+        name="description"
+        content="Portfolio of MD TANJIM MAHATAB BHUIYAN, a Flutter Developer specializing in Flutter, Dart, Firebase, REST API and mobile application development."
+    >
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<header>
- <div class="wrap nav">
-  <a href="#profile" class="logo" id="logo"></a>
-  <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">☰</button>
-  <nav class="links" id="links" aria-label="Main">
-   <a class="l" href="#profile">Profile</a>
-   <a class="l" href="#projects">Projects</a>
-   <a class="l" href="#education">Education</a>
-   <button class="btn" id="contactBtn">Contact Now</button>
-  </nav>
- </div>
-</header>
 
-<main>
-<section class="hero" id="profile">
-    <div class="wrap">
+    <!--  HEADER  -->
 
-        <div class="rv">
-            <div class="pic">
-                <img 
-                    id="avatar"
-                    src="assets/images/profile.jpeg"
-                    alt="MD TANJIM MAHATAB BHUIYAN"
-                    width="320"
-                    height="320"
-                >
+    <header>
+        <div class="wrap nav">
+
+            <!-- Logo / Name -->
+            <a href="#profile" class="logo" id="logo"></a>
+
+            <!-- Mobile Menu Button -->
+            <button
+                class="burger"
+                id="burger"
+                aria-label="Toggle menu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+            <!-- Navigation -->
+            <nav
+                class="links"
+                id="links"
+                aria-label="Main"
+            >
+                <a class="l" href="#profile">
+                    Profile
+                </a>
+
+                <a class="l" href="#projects">
+                    Projects
+                </a>
+
+                <a class="l" href="#education">
+                    Education
+                </a>
+
+                <button class="btn" id="contactBtn">
+                    Contact Now
+                </button>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!--  MAIN CONTENT  -->
+
+    <main>
+
+        <!--  HERO / PROFILE  -->
+
+        <section class="hero" id="profile">
+
+            <div class="wrap">
+
+                <!-- Profile Image -->
+                <div class="rv">
+                    <div class="pic">
+
+                        <img
+                            id="avatar"
+                            src="assets/images/profile.jpeg"
+                            alt="MD TANJIM MAHATAB BHUIYAN"
+                            width="320"
+                            height="320"
+                        >
+
+                    </div>
+                </div>
+
+
+                <!-- Hero Content -->
+                <div class="rv">
+
+                    <p class="hi">
+                        Hello, I'm
+                    </p>
+
+                    <h1 id="heroName">
+                        MD TANJIM MAHATAB BHUIYAN
+                    </h1>
+
+                    <p class="role">
+                        Flutter Developer
+                    </p>
+
+                    <p class="i">
+                        I am a passionate Flutter Developer and Computer
+                        Science &amp; Technology student who enjoys building
+                        modern, responsive, and user-friendly mobile
+                        applications.
+
+                        I work with Flutter, Dart, Firebase, REST APIs,
+                        Git, and other modern development technologies.
+                    </p>
+
+
+                    <!-- Hero Buttons -->
+                    <div class="cta">
+
+                        <a
+                            class="btn"
+                            href="#projects"
+                        >
+                            View My Projects
+                        </a>
+
+                        <a
+                            class="btn o"
+                            href="#contact"
+                        >
+                            Contact Me
+                        </a>
+
+                    </div>
+
+                </div>
+
             </div>
+
+        </section>
+
+
+        <!--  ABOUT ME  -->
+
+        <section
+            id="about"
+            class="about"
+        >
+
+            <div class="wrap">
+
+                <h2 class="t rv">
+                    About Me
+                </h2>
+
+                <p class="sub rv">
+                    I am a Diploma Engineering student in
+                    Computer Science &amp; Technology, focused on
+                    Flutter mobile application development.
+
+                    I have experience building mobile apps and
+                    database-driven projects. I enjoy:
+                </p>
+
+
+                <!-- About List -->
+                <ul class="rv">
+
+                    <li>
+                        Building mobile applications
+                    </li>
+
+                    <li>
+                        Creating clean and responsive UI
+                    </li>
+
+                    <li>
+                        Working with Firebase
+                    </li>
+
+                    <li>
+                        Connecting applications with REST APIs
+                    </li>
+
+                    <li>
+                        Managing application data
+                    </li>
+
+                    <li>
+                        Learning modern software development practices
+                    </li>
+
+                </ul>
+
+
+                <!-- Skills -->
+                <h2
+                    class="t rv"
+                    style="margin-top: 40px"
+                >
+                    Skills
+                </h2>
+
+                <div
+                    class="grid g3"
+                    id="skills"
+                ></div>
+
+            </div>
+
+        </section>
+
+
+        <!--  PROJECTS  -->
+
+        <section
+            id="projects"
+            style="background: var(--bg2)"
+        >
+
+            <div class="wrap">
+
+                <h2 class="t rv">
+                    My Projects
+                </h2>
+
+                <p class="sub rv">
+                    Click a project to see details.
+                </p>
+
+                <div
+                    class="grid g3"
+                    id="projGrid"
+                ></div>
+
+            </div>
+
+        </section>
+
+
+        <!--  EDUCATION  -->
+
+        <section id="education">
+
+            <div class="wrap">
+
+                <h2 class="t rv">
+                    Education
+                </h2>
+
+                <p class="sub rv"></p>
+
+                <div
+                    class="tl"
+                    id="edu"
+                ></div>
+
+            </div>
+
+        </section>
+
+
+        <!--  COURSES & LEARNING  -->
+
+        <section
+            id="courses"
+            style="background: var(--bg2)"
+        >
+
+            <div class="wrap">
+
+                <h2 class="t rv">
+                    Courses &amp; Learning
+                </h2>
+
+                <p class="sub rv"></p>
+
+                <div
+                    class="grid g3"
+                    id="courseGrid"
+                ></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTACT  -->
+
+        <section id="contact">
+
+            <div class="wrap">
+
+                <h2 class="t rv">
+                    Let's Work Together
+                </h2>
+
+                <p class="sub rv">
+                    Have a project idea or want to work together?
+                    Feel free to contact me.
+                </p>
+
+                <div
+                    class="cl rv"
+                    id="contactList"
+                ></div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!--  FOOTER  -->
+
+    <footer>
+
+        <div class="wrap">
+
+            <strong id="fName"></strong>
+
+            Flutter Developer
+
+            <div
+                class="soc"
+                id="fSoc"
+            ></div>
+
+            <small>
+                © 2026
+                <span id="fName2"></span>.
+                All Rights Reserved.
+            </small>
+
         </div>
 
-        <div class="rv">
-            <p class="hi">Hello, I'm</p>
+    </footer>
 
-            <h1 id="heroName">
-                MD TANJIM MAHATAB BHUIYAN
-            </h1>
 
-            <p class="role">
-                Flutter Developer
-            </p>
+    <!--  CONTACT MODAL  -->
 
-            <p class="i">
-                I am a passionate Flutter Developer and Computer Science
-                &amp; Technology student who enjoys building modern,
-                responsive, and user-friendly mobile applications.
-                I work with Flutter, Dart, Firebase, REST APIs, Git,
-                and other modern development technologies.
-            </p>
+    <div
+        class="modal"
+        id="contactModal"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Contact"
+    >
 
-            <div class="cta">
-                <a class="btn" href="#projects">
-                    View My Projects
-                </a>
+        <div
+            class="mb"
+            style="max-width: 560px"
+        >
 
-                <a class="btn o" href="#contact">
-                    Contact Me
-                </a>
-            </div>
+            <button
+                class="x"
+                data-close
+                aria-label="Close"
+            >
+                ×
+            </button>
+
+            <h3 style="margin-top: 0">
+                Contact Me
+            </h3>
+
+            <div
+                class="cl"
+                id="contactPop"
+            ></div>
+
         </div>
 
     </div>
-</section>
 
 
+    <!--  PROJECT DETAILS MODAL -->
+
+    <div
+        class="modal"
+        id="projModal"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Project details"
+    >
+
+        <div class="mb">
+
+            <button
+                class="x"
+                data-close
+                aria-label="Close"
+            >
+                ×
+            </button>
+
+            <div
+                class="two"
+                id="projBody"
+            ></div>
+
+        </div>
+
+    </div>
 
 
-<section id="about" class="about">
- <div class="wrap">
-  <h2 class="t rv">About Me</h2>
-  <p class="sub rv">I am a Diploma Engineering student in Computer Science &amp; Technology, focused on Flutter mobile application development. I have experience building mobile apps and database-driven projects. I enjoy:</p>
-  <ul class="rv"><li>Building mobile applications</li><li>Creating clean and responsive UI</li><li>Working with Firebase</li><li>Connecting applications with REST APIs</li><li>Managing application data</li><li>Learning modern software development practices</li></ul>
-  <h2 class="t rv" style="margin-top:40px">Skills</h2>
-  <div class="grid g3" id="skills"></div>
- </div>
-</section>
+    <!--  JAVASCRIPT  -->
 
-<section id="projects" style="background:var(--bg2)">
- <div class="wrap">
-  <h2 class="t rv">My Projects</h2>
-  <p class="sub rv">Click a project to see details.</p>
-  <div class="grid g3" id="projGrid"></div>
- </div>
-</section>
+    <script src="config.js"></script>
+    <script src="script.js"></script>
 
-<section id="education">
- <div class="wrap">
-  <h2 class="t rv">Education</h2><p class="sub rv"></p>
-  <div class="tl" id="edu"></div>
- </div>
-</section>
-
-<section id="courses" style="background:var(--bg2)">
- <div class="wrap">
-  <h2 class="t rv">Courses &amp; Learning</h2><p class="sub rv"></p>
-  <div class="grid g3" id="courseGrid"></div>
- </div>
-</section>
-
-<section id="contact">
- <div class="wrap">
-  <h2 class="t rv">Let's Work Together</h2>
-  <p class="sub rv">Have a project idea or want to work together? Feel free to contact me.</p>
-  <div class="cl rv" id="contactList"></div>
- </div>
-</section>
-</main>
-
-<footer>
- <div class="wrap">
-  <strong id="fName"></strong>Flutter Developer
-  <div class="soc" id="fSoc"></div>
-  <small>© 2026 <span id="fName2"></span>. All Rights Reserved.</small>
- </div>
-</footer>
-
-<div class="modal" id="contactModal" role="dialog" aria-modal="true" aria-label="Contact">
- <div class="mb" style="max-width:560px"><button class="x" data-close aria-label="Close">×</button>
-  <h3 style="margin-top:0">Contact Me</h3><div class="cl" id="contactPop"></div></div>
-</div>
-<div class="modal" id="projModal" role="dialog" aria-modal="true" aria-label="Project details">
- <div class="mb"><button class="x" data-close aria-label="Close">×</button><div class="two" id="projBody"></div></div>
-</div>
-<script src="config.js"></script>
-<script src="script.js"></script>
 </body>
+
 </html>
+```
