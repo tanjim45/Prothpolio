@@ -1,8 +1,8 @@
-/* ===== PERSONAL INFORMATION (shob contact info ekhane) ===== */
+/*  PERSONAL INFORMATION  */
 const CONFIG = {
   name: "MD TANJIM MAHATAB BHUIYAN",
   phone: "01537418745",
-  whatsapp: "8801537418745", // country code shoho (880...)
+  whatsapp: "8801537418745", 
   email: "tanjimmahatab38@gmail.com",
   facebook: "https://www.facebook.com/tanjim.bhuiyan.766896",
   instagram: "https://www.instagram.com/tanjim_bhuiyan5339/",
@@ -75,7 +75,7 @@ const PROJECTS = [
   }
 ];
 
-/* ===== EDUCATION ===== */
+/*  EDUCATION  */
 const EDUCATION = [
   {
     t: "Diploma in Computer Science & Technology",
@@ -87,7 +87,7 @@ const EDUCATION = [
   }
 ];
 
-/* ===== COURSES ===== */
+/*  COURSES */
 const COURSES = [
   "Flutter Development", "Dart Programming", "Firebase",
   "REST API Integration", "Git & GitHub", "Mobile Application Development"
