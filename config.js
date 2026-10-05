@@ -29,7 +29,7 @@ const PROJECTS = [
     d: "A weather application that displays weather information using API integration.",
     t: ["Flutter", "Dart", "REST API"],
     f: ["Live weather data from an API", "Clean and responsive UI"],
-    gh: "https://github.com/tanjim45/WeatherApp", demo: ""
+    gh: "https://github.com/tanjim45/WeatherApp", demo: "http://localhost:53604/"
   },
   {
     n: "Attendance App", img: "",

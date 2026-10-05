@@ -163,8 +163,8 @@ const io = new IntersectionObserver(
 );
 document.querySelectorAll(".rv").forEach((el) => io.observe(el));
 
-/* ===== PRELOADER ===== */
-/* ===== PRELOADER ===== */
+
+/*  PRELOADER  */
 (() => {
   const pl = document.getElementById("preloader");
   if (!pl) return;
