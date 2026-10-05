@@ -34,7 +34,7 @@ const PROJECTS = [
   },
   {
     n: "Attendance App",
-    shots: [],   // যেমন: ["assets/images/Attendance1.png", "assets/images/Attendance2.png"]
+    shots:  ["assets/images/Attendance.png" ],
     d: "An attendance management application with authentication and attendance tracking.",
     t: ["Flutter", "Dart", "Firebase Authentication", "Cloud Firestore"],
     f: ["User authentication", "Mark attendance", "Attendance history", "Firebase database"],

@@ -96,7 +96,7 @@ $("#fSoc").innerHTML = links
   .map((l) => `<a href="${esc(l[2])}" target="_blank" rel="noopener noreferrer">${l[1]}</a>`)
   .join("");
 
-/* ===== LIGHTBOX (ছবি বড় করে দেখা) ===== */
+/*  LIGHTBOX  */
 const lb = document.createElement("div");
 lb.className = "lb";
 lb.setAttribute("role", "dialog");
@@ -137,10 +137,10 @@ function stepLb(d) {
 lb.addEventListener("click", (e) => {
   if (e.target.closest(".lb-prev")) return stepLb(-1);
   if (e.target.closest(".lb-next")) return stepLb(1);
-  if (e.target !== lbImg) closeLb();   // ছবির বাইরে বা × এ ক্লিক করলে বন্ধ
+  if (e.target !== lbImg) closeLb();  
 });
 
-/* কিবোর্ড: Esc বন্ধ, ← → পরিবর্তন (lightbox খোলা থাকলে modal আগে বন্ধ হবে না) */
+
 addEventListener("keydown", (e) => {
   if (!lb.classList.contains("open")) return;
   if (e.key === "Escape") { closeLb(); e.stopImmediatePropagation(); }
