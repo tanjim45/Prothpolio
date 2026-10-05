@@ -164,12 +164,12 @@ const io = new IntersectionObserver(
 document.querySelectorAll(".rv").forEach((el) => io.observe(el));
 
 /* ===== PRELOADER ===== */
+/* ===== PRELOADER ===== */
 (() => {
   const pl = document.getElementById("preloader");
   if (!pl) return;
 
-  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const minTime = reduce ? 500 : 2400; // animation sesh howar somoy (ms)
+  const minTime = 2400; // animation sesh howar somoy (ms), shob device e same
   const start = performance.now();
 
   const finish = () => {

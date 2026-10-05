@@ -164,8 +164,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--acc); outline-o
   section { padding: 60px 0; }
   .logo { font-size: .8rem; }
 }
-
-/* ===== PRELOADER (loading page) ===== */
+/* PRELOADER (loading page)  */
 body.loading { overflow: hidden; }
 
 .preloader {
@@ -199,8 +198,13 @@ body.loading { overflow: hidden; }
 }
 @keyframes pl-fill { to { transform: scaleX(1); } }
 
+/* style.css reduced-motion e shob animation bondho kore dey; loading page er ta
+   jate phone e-o dekha jay, tai ekhane abar chalu kora hoyeche */
 @media (prefers-reduced-motion: reduce) {
-  .pl-bar span { transform: none; }
+  .pl-l { animation: pl-left .9s cubic-bezier(.2, .8, .2, 1) both !important; }
+  .pl-r { animation: pl-right .9s cubic-bezier(.2, .8, .2, 1) both !important; }
+  .pl-bar span { animation: pl-fill 1.1s ease .9s forwards !important; }
+  .preloader { transition: opacity .6s ease, visibility .6s ease !important; }
 }
 
 
