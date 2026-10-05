@@ -162,3 +162,23 @@ const io = new IntersectionObserver(
   { threshold: 0.12 }
 );
 document.querySelectorAll(".rv").forEach((el) => io.observe(el));
+
+/* ===== PRELOADER ===== */
+(() => {
+  const pl = document.getElementById("preloader");
+  if (!pl) return;
+
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const minTime = reduce ? 500 : 2400; // animation sesh howar somoy (ms)
+  const start = performance.now();
+
+  const finish = () => {
+    pl.classList.add("done");
+    document.body.classList.remove("loading");
+    setTimeout(() => pl.remove(), 700);
+  };
+  const go = () => setTimeout(finish, Math.max(0, minTime - (performance.now() - start)));
+
+  if (document.readyState === "complete") go();
+  else addEventListener("load", go);
+})();
