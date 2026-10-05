@@ -14,7 +14,14 @@ const ph = (text, w = 640, h = 400) =>
     </svg>`
   );
 
-/* ===== CONTACT LINKS (faka/invalid link auto hide hobe) ===== */
+/* প্রজেক্টের সব স্ক্রিনশট (shots অথবা পুরনো img) */
+const shotsOf = (p) => {
+  const list = Array.isArray(p.shots) ? p.shots.filter(Boolean) : [];
+  if (!list.length && p.img) list.push(p.img);
+  return list;
+};
+
+/* ===== CONTACT LINKS ===== */
 const links = [
   ["📞", "Phone", CONFIG.phone ? `tel:${CONFIG.phone}` : ""],
   ["💬", "WhatsApp", CONFIG.whatsapp ? `https://wa.me/${CONFIG.whatsapp}` : ""],
@@ -36,7 +43,7 @@ $("#heroName").textContent = CONFIG.name;
 $("#fName").textContent = CONFIG.name;
 $("#fName2").textContent = CONFIG.name;
 
-/* ===== PROFILE IMAGE (photo na paile placeholder) ===== */
+/* ===== PROFILE IMAGE ===== */
 const avatar = $("#avatar");
 avatar.onerror = () => {
   avatar.onerror = null;
@@ -59,7 +66,7 @@ const tagsHTML = (p) => p.t.map((t) => `<span class="tag">${t}</span>`).join("")
 $("#projGrid").innerHTML = PROJECTS.map(
   (p, i) => `
   <article class="card proj rv" data-i="${i}" tabindex="0" role="button" aria-label="Open ${esc(p.n)}">
-    <img loading="lazy" src="${p.img || ph(p.n)}" alt="${esc(p.n)} screenshot">
+    <img loading="lazy" src="${shotsOf(p)[0] || ph(p.n)}" alt="${esc(p.n)} screenshot">
     <div class="b">
       <h3 style="margin:0 0 6px">${p.n}</h3>
       <p style="color:var(--mut);margin:0">${p.d}</p>
@@ -89,13 +96,91 @@ $("#fSoc").innerHTML = links
   .map((l) => `<a href="${esc(l[2])}" target="_blank" rel="noopener noreferrer">${l[1]}</a>`)
   .join("");
 
+/* ===== LIGHTBOX (ছবি বড় করে দেখা) ===== */
+const lb = document.createElement("div");
+lb.className = "lb";
+lb.setAttribute("role", "dialog");
+lb.setAttribute("aria-label", "Screenshot viewer");
+lb.innerHTML = `
+  <button class="lb-x" aria-label="Close">×</button>
+  <button class="lb-prev" aria-label="Previous">‹</button>
+  <img alt="">
+  <button class="lb-next" aria-label="Next">›</button>
+  <div class="lb-c"></div>`;
+document.body.appendChild(lb);
+
+const lbImg = lb.querySelector("img");
+const lbCount = lb.querySelector(".lb-c");
+let lbList = [];
+let lbIdx = 0;
+let lbAlt = "";
+
+function renderLb() {
+  lbImg.src = lbList[lbIdx];
+  lbImg.alt = `${lbAlt} screenshot ${lbIdx + 1}`;
+  lbCount.textContent = `${lbIdx + 1} / ${lbList.length}`;
+  lb.classList.toggle("single", lbList.length < 2);
+}
+function openLb(list, i, alt) {
+  if (!list.length) return;
+  lbList = list; lbIdx = i; lbAlt = alt;
+  renderLb();
+  lb.classList.add("open");
+}
+function closeLb() { lb.classList.remove("open"); }
+function stepLb(d) {
+  if (lbList.length < 2) return;
+  lbIdx = (lbIdx + d + lbList.length) % lbList.length;
+  renderLb();
+}
+
+lb.addEventListener("click", (e) => {
+  if (e.target.closest(".lb-prev")) return stepLb(-1);
+  if (e.target.closest(".lb-next")) return stepLb(1);
+  if (e.target !== lbImg) closeLb();   // ছবির বাইরে বা × এ ক্লিক করলে বন্ধ
+});
+
+/* কিবোর্ড: Esc বন্ধ, ← → পরিবর্তন (lightbox খোলা থাকলে modal আগে বন্ধ হবে না) */
+addEventListener("keydown", (e) => {
+  if (!lb.classList.contains("open")) return;
+  if (e.key === "Escape") { closeLb(); e.stopImmediatePropagation(); }
+  if (e.key === "ArrowLeft") stepLb(-1);
+  if (e.key === "ArrowRight") stepLb(1);
+}, true);
+
+/* মোবাইলে swipe */
+let tx = 0;
+lb.addEventListener("touchstart", (e) => { tx = e.touches[0].clientX; }, { passive: true });
+lb.addEventListener("touchend", (e) => {
+  const dx = e.changedTouches[0].clientX - tx;
+  if (Math.abs(dx) > 50) stepLb(dx < 0 ? 1 : -1);
+});
+
 /* ===== PROJECT MODAL ===== */
+let curProj = null;
+
 function openProj(i) {
   const p = PROJECTS[i];
   if (!p) return;
+  curProj = p;
+  const shots = shotsOf(p);
   const hasBtns = isUrl(p.gh) || isUrl(p.demo);
+
+  const media = shots.length
+    ? `<div>
+         <div class="shot-wrap">
+           <img class="shot-main zoomable" data-shot="0" src="${esc(shots[0])}" alt="${esc(p.n)} screenshot" title="Click to enlarge">
+           <span class="zoom-hint">🔍 Click to enlarge</span>
+         </div>
+         ${shots.length > 1
+           ? `<div class="thumbs">${shots.map((s, k) =>
+               `<img data-shot="${k}" src="${esc(s)}" alt="${esc(p.n)} screenshot ${k + 1}">`).join("")}</div>`
+           : ""}
+       </div>`
+    : `<img src="${ph(p.n)}" alt="${esc(p.n)} screenshot" style="border-radius:12px;width:100%">`;
+
   $("#projBody").innerHTML = `
-    <img src="${p.img || ph(p.n)}" alt="${esc(p.n)} screenshot" style="border-radius:12px;width:100%">
+    ${media}
     <div>
       <h3>${p.n}</h3>
       <p style="color:var(--mut)">${p.d}</p>
@@ -107,6 +192,12 @@ function openProj(i) {
     </div>`;
   $("#projModal").classList.add("open");
 }
+
+/* modal এর ভিতরে ছবিতে ক্লিক → lightbox */
+$("#projBody").addEventListener("click", (e) => {
+  const img = e.target.closest("[data-shot]");
+  if (img && curProj) openLb(shotsOf(curProj), Number(img.dataset.shot), curProj.n);
+});
 
 $("#projGrid").addEventListener("click", (e) => {
   if (e.target.closest("a")) return;
@@ -163,13 +254,12 @@ const io = new IntersectionObserver(
 );
 document.querySelectorAll(".rv").forEach((el) => io.observe(el));
 
-
-/*  PRELOADER  */
+/* ===== PRELOADER ===== */
 (() => {
   const pl = document.getElementById("preloader");
   if (!pl) return;
 
-  const minTime = 2400; // animation sesh howar somoy (ms), shob device e same
+  const minTime = 2400;
   const start = performance.now();
 
   const finish = () => {

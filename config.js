@@ -25,42 +25,48 @@ const SKILLS = [
     demo: live link */
 const PROJECTS = [
   {
-    n: "Weather App", img: "assets/images/WeatherApp.png",
+    n: "Weather App",
+    shots: ["assets/images/WeatherApp.png"],          
     d: "A weather application that displays weather information using API integration.",
     t: ["Flutter", "Dart", "REST API"],
     f: ["Live weather data from an API", "Clean and responsive UI"],
     gh: "https://github.com/tanjim45/WeatherApp", demo: ""
   },
   {
-    n: "Attendance App", img: "",
+    n: "Attendance App",
+    shots: [],   // যেমন: ["assets/images/Attendance1.png", "assets/images/Attendance2.png"]
     d: "An attendance management application with authentication and attendance tracking.",
     t: ["Flutter", "Dart", "Firebase Authentication", "Cloud Firestore"],
     f: ["User authentication", "Mark attendance", "Attendance history", "Firebase database"],
     gh: "https://github.com/tanjim45/AttendanceApp", demo: ""
   },
   {
-    n: "Note App", img: "",
+    n: "Note App",
+    shots: [],
     d: "A simple note management application.",
     t: ["Flutter", "Dart", "Firebase"],
     f: ["Create notes", "Update notes", "Delete notes", "Store notes using Firebase"],
     gh: "https://github.com/tanjim45/note_apps", demo: ""
   },
   {
-    n: "Expense Tracker", img: "",
+    n: "Expense Tracker",
+    shots: [],
     d: "An expense and income management application.",
     t: ["Flutter", "Dart", "Firebase", "Cloud Firestore"],
     f: ["Add income", "Add expenses", "Daily report", "Monthly report", "Expense visualization and charts"],
     gh: "https://github.com/tanjim45/expense_tracker", demo: ""
   },
   {
-    n: "Simple Chatting App", img: "",
+    n: "Simple Chatting App",
+    shots: [],
     d: "A real-time chatting application.",
     t: ["Flutter", "Dart", "Firebase Authentication", "Cloud Firestore"],
     f: ["User authentication", "User-to-user chatting", "Firebase database"],
     gh: "https://github.com/tanjim45/chatingApps", demo: ""
   },
   {
-    n: "E-commerce App (My Shop)", img: "",
+    n: "E-commerce App (My Shop)",
+    shots: [],
     d: "A full-featured shopping application with user accounts, cart, checkout flow and order tracking.",
     t: ["Flutter", "Dart", "Firebase Authentication", "Cloud Firestore"],
     f: [
