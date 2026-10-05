@@ -25,11 +25,11 @@ const SKILLS = [
     demo: live link */
 const PROJECTS = [
   {
-    n: "Weather App", img: "",
+    n: "Weather App", img: "assets/images/WeatherApp.png",
     d: "A weather application that displays weather information using API integration.",
     t: ["Flutter", "Dart", "REST API"],
     f: ["Live weather data from an API", "Clean and responsive UI"],
-    gh: "https://github.com/tanjim45/WeatherApp", demo: "http://localhost:53604/"
+    gh: "https://github.com/tanjim45/WeatherApp", demo: ""
   },
   {
     n: "Attendance App", img: "",
