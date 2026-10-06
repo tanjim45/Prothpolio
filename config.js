@@ -34,7 +34,7 @@ const PROJECTS = [
   },
   {
     n: "Attendance App",
-    shots:  ["assets/images/Attendance.png" ],
+    shots:  ["assets/images/Atten.png","assets/images/Attendencee.png"],
     d: "An attendance management application with authentication and attendance tracking.",
     t: ["Flutter", "Dart", "Firebase Authentication", "Cloud Firestore"],
     f: ["User authentication", "Mark attendance", "Attendance history", "Firebase database"],
@@ -42,7 +42,7 @@ const PROJECTS = [
   },
   {
     n: "Note App",
-    shots: [],
+    shots: ["assets/images/note.png","assets/images/notee.png"],
     d: "A simple note management application.",
     t: ["Flutter", "Dart", "Firebase"],
     f: ["Create notes", "Update notes", "Delete notes", "Store notes using Firebase"],
@@ -50,7 +50,7 @@ const PROJECTS = [
   },
   {
     n: "Expense Tracker",
-    shots: [],
+    shots: ["assets/images/ex1.png","assets/images/ex2.png","assets/images/ex3.png","assets/images/ex4.png"],
     d: "An expense and income management application.",
     t: ["Flutter", "Dart", "Firebase", "Cloud Firestore"],
     f: ["Add income", "Add expenses", "Daily report", "Monthly report", "Expense visualization and charts"],
@@ -58,7 +58,7 @@ const PROJECTS = [
   },
   {
     n: "Simple Chatting App",
-    shots: [],
+    shots: ["assets/images/chat.png","assets/images/chat1.png","assets/images/chat3.png"],
     d: "A real-time chatting application.",
     t: ["Flutter", "Dart", "Firebase Authentication", "Cloud Firestore"],
     f: ["User authentication", "User-to-user chatting", "Firebase database"],
@@ -66,7 +66,7 @@ const PROJECTS = [
   },
   {
     n: "E-commerce App (My Shop)",
-    shots: [],
+    shots: ["assets/images/shop.png","assets/images/shop1.png","assets/images/shop2.png","assets/images/shop3.png","assets/images/shop4.png","assets/images/shop5.png"],
     d: "A full-featured shopping application with user accounts, cart, checkout flow and order tracking.",
     t: ["Flutter", "Dart", "Firebase Authentication", "Cloud Firestore"],
     f: [
