@@ -26,7 +26,7 @@ const SKILLS = [
 const PROJECTS = [
   {
     n: "Weather App",
-    shots: ["assets/images/WeatherApp.png"],          
+    shots: ["assets/images/WeatherApp.png","assets/images/Weather1.png"],          
     d: "A weather application that displays weather information using API integration.",
     t: ["Flutter", "Dart", "REST API"],
     f: ["Live weather data from an API", "Clean and responsive UI"],
