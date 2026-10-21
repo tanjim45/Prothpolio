@@ -50,7 +50,9 @@ const PROJECTS = [
   },
   {
     n: "Expense Tracker",
-    shots: ["assets/images/ex1.png","assets/images/ex2.png","assets/images/ex3.png","assets/images/ex4.png"],
+    shots: ["assets/images/ex1.png","assets/images/ex2.png","assets/images/ex3.png","assets/images/ex4.png",
+      "assets/images/ex5.png","assets/images/ex6.png","assets/images/ex7.png","assets/images/ex8.png"
+    ],
     d: "An expense and income management application.",
     t: ["Flutter", "Dart", "Firebase", "Cloud Firestore"],
     f: ["Add income", "Add expenses", "Daily report", "Monthly report", "Expense visualization and charts"],
