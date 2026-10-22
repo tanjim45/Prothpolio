@@ -26,7 +26,7 @@ const SKILLS = [
 const PROJECTS = [
   {
     n: "Weather App",
-    shots: ["assets/images/WeatherApp.png","assets/images/Weather1.png"],          
+    shots: ["assets/images/WeatherApp.png","assets/images/weather1.png"],          
     d: "A weather application that displays weather information using API integration.",
     t: ["Flutter", "Dart", "REST API"],
     f: ["Live weather data from an API", "Clean and responsive UI"],
@@ -42,7 +42,9 @@ const PROJECTS = [
   },
   {
     n: "Note App",
-    shots: ["assets/images/note.png","assets/images/notee.png"],
+    shots: ["assets/images/note.png","assets/images/note1.png","assets/images/note2.png","assets/images/note3.png",
+      "assets/images/note4.png","assets/images/note5.png"
+    ],
     d: "A simple note management application.",
     t: ["Flutter", "Dart", "Firebase"],
     f: ["Create notes", "Update notes", "Delete notes", "Store notes using Firebase"],
